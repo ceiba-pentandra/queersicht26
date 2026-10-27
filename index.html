@@ -134,11 +134,33 @@
   .fav-btn:not(.active) .fav-count { background: var(--accent); color: #fff; }
   .fav-btn.active .fav-count { background: rgba(255,255,255,0.25); }
 
-  /* ---------- SEARCH ---------- */
+  /* ---------- SEARCH (inside search-row on mobile, standalone on desktop) ---------- */
   .search-wrap {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 16px 12px;
+    flex: 1;
+    min-width: 0;
+  }
+  /* Desktop: keep search as its own row */
+  @media (min-width: 769px) {
+    .search-row {
+      display: block;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 16px 12px;
+    }
+    .filter-toggle { display: none !important; }
+    .filter-panel {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 16px 12px;
+      max-height: none !important;
+      opacity: 1 !important;
+    }
+    .filter-panel.collapsed {
+      max-height: none !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+    .filters { padding: 0; }
   }
   .search-input {
     width: 100%;
@@ -525,13 +547,91 @@
     padding: 0;
   }
 
+  /* ---------- SEARCH ROW (search + inline filter button on mobile) ---------- */
+  .search-row {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 16px 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .search-wrap {
+    flex: 1;
+    padding: 0 !important;
+    min-width: 0;
+  }
+  .search-input { width: 100%; }
+  .filter-toggle {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 11px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  .filter-toggle:hover { background: var(--bg-card-hover); }
+  .filter-toggle.active { border-color: var(--accent); color: var(--accent); }
+  .filter-toggle .chevron {
+    width: 7px; height: 7px;
+    border-right: 1.8px solid currentColor;
+    border-bottom: 1.8px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+    margin-left: 2px;
+  }
+  .filter-toggle.open .chevron { transform: rotate(-135deg); }
+  .filter-toggle-badge {
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+  .filter-toggle:not(.active) .filter-toggle-badge { display: none; }
+  .filter-panel {
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.2s ease;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .filter-panel.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    pointer-events: none;
+  }
+  .filter-panel:not(.collapsed) {
+    max-height: 300px;
+    opacity: 1;
+  }
+
   /* ---------- MOBILE ---------- */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .header-inner { padding: 10px 12px 8px; gap: 8px; }
     .logo-text small { display: none; }
     .logo-text { font-size: 16px; }
-    .search-wrap, .filters, .view-toggle, main, footer { padding-left: 12px; padding-right: 12px; }
-    .filters { gap: 6px; padding-bottom: 10px; }
+    .search-row, .view-toggle, main, footer { padding-left: 12px; padding-right: 12px; }
+    .search-row { padding-bottom: 8px; gap: 6px; }
+    .search-input { padding: 9px 14px 9px 38px; font-size: 14px; }
+    .filter-toggle { display: inline-flex; padding: 9px 12px; }
+    .filters { gap: 6px; padding: 10px 12px; }
     .filter-label { font-size: 9px; }
     .filter-select { padding: 8px 26px 8px 10px; font-size: 12px; }
     .time-row { grid-template-columns: 48px 1fr; gap: 8px; }
@@ -539,6 +639,10 @@
     .film-card { padding: 12px; }
     .film-title { font-size: 15px; }
     .day-name { font-size: 16px; }
+    .filter-panel.collapsed { max-height: 0; }
+  }
+  @media (max-width: 480px) {
+    .filters { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 380px) {
     .time-row { grid-template-columns: 42px 1fr; }
@@ -563,11 +667,21 @@
       <span class="fav-count" id="favCount">0</span>
     </button>
   </div>
-  <div class="search-wrap">
-    <input type="search" class="search-input" id="searchInput"
-           placeholder="Film, Land, Regie, Thema suchen…" autocomplete="off">
+  <div class="search-row">
+    <div class="search-wrap">
+      <input type="search" class="search-input" id="searchInput"
+             placeholder="Film, Land, Regie, Thema suchen…" autocomplete="off">
+    </div>
+    <button class="filter-toggle" id="filterToggle" onclick="toggleFilters()" aria-expanded="false" aria-label="Filter ein-/ausblenden">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+      <span>Filter</span>
+      <span class="filter-toggle-badge" id="filterBadge">0</span>
+      <span class="chevron"></span>
+    </button>
   </div>
-  <div class="filters" id="filters"></div>
+  <div class="filter-panel collapsed" id="filterPanel">
+    <div class="filters" id="filters"></div>
+  </div>
 </header>
 
 <div class="view-toggle"><div class="view-toggle-inner" role="tablist">
@@ -752,7 +866,41 @@ function setFilter(kind, value) {
     sel.value = value || "";
     sel.classList.toggle("active", !!value);
   }
+  updateFilterToggle();
+  // On mobile, auto-collapse the panel after selecting a filter so results are visible
+  if (window.innerWidth <= 768) {
+    const panel = document.getElementById("filterPanel");
+    const toggle = document.getElementById("filterToggle");
+    if (!panel.classList.contains("collapsed")) {
+      // Defer the collapse so the user sees their selection register first
+      setTimeout(() => {
+        panel.classList.add("collapsed");
+        toggle.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        requestAnimationFrame(updateStickyTop);
+      }, 180);
+    }
+  }
   render();
+}
+
+function toggleFilters() {
+  const panel = document.getElementById("filterPanel");
+  const toggle = document.getElementById("filterToggle");
+  const isCollapsed = panel.classList.contains("collapsed");
+  panel.classList.toggle("collapsed", !isCollapsed);
+  toggle.classList.toggle("open", isCollapsed);
+  toggle.setAttribute("aria-expanded", String(isCollapsed));
+  // Recompute sticky offset (header height changes when panel opens/closes)
+  requestAnimationFrame(updateStickyTop);
+}
+
+function updateFilterToggle() {
+  const activeCount = [state.day, state.location, state.category].filter(Boolean).length;
+  const toggle = document.getElementById("filterToggle");
+  const badge = document.getElementById("filterBadge");
+  if (toggle) toggle.classList.toggle("active", activeCount > 0);
+  if (badge) badge.textContent = activeCount;
 }
 
 function setView(v) {
@@ -775,6 +923,7 @@ function resetAll() {
     const sel = document.getElementById(id);
     if (sel) { sel.value = ""; sel.classList.remove("active"); }
   });
+  updateFilterToggle();
   render();
 }
 
@@ -1010,6 +1159,7 @@ document.getElementById("searchInput").addEventListener("input", e => {
 // ---------- INIT ----------
 buildFilters();
 updateFavCount();
+updateFilterToggle();
 updateStickyTop();
 render();
 window.addEventListener("resize", updateStickyTop);
@@ -1031,6 +1181,7 @@ window.toggleFav = toggleFav;
 window.toggleFavOnly = toggleFavOnly;
 window.cardClick = cardClick;
 window.resetAll = resetAll;
+window.toggleFilters = toggleFilters;
 </script>
 </body>
 </html>
