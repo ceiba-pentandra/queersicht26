@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d12">
+<meta name="description" content="Queersicht 2026 – LGBTIAQ+ Filmfestival Bern, 5.–11.11.2026. Programmübersicht mit Filtern nach Tag, Location, Kategorie.">
+<title>Queersicht 2026 · Programm</title>
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-elev: #16161e;
+    --bg-card: #1d1d28;
+    --bg-card-hover: #252532;
+    --text: #f4f1ea;
+    --text-dim: #b8b3a8;
+    --text-faint: #6b685f;
+    --accent: #ff4d8d;        /* hot pink */
+    --accent-2: #ffd23f;      /* yellow */
+    --accent-3: #4cc9f0;      /* cyan */
+    --accent-4: #9bf6a3;      /* mint */
+    --accent-5: #b388ff;      /* purple */
+    --accent-6: #ff8a3d;     /* orange */
+    --border: #2a2a36;
+    --border-strong: #3a3a4a;
+    --shadow: 0 4px 16px rgba(0,0,0,0.4);
+    --radius: 14px;
+    --radius-sm: 8px;
+    --max-w: 1100px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fbf7f0;
+      --bg-elev: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f4f0e8;
+      --text: #1a1a22;
+      --text-dim: #4d4a44;
+      --text-faint: #8a867d;
+      --border: #e5e0d6;
+      --border-strong: #d0c9bc;
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+  body { min-height: 100vh; padding-bottom: env(safe-area-inset-bottom); }
+
+  /* ---------- HEADER ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(13,13,18,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding-top: env(safe-area-inset-top);
+  }
+  @media (prefers-color-scheme: light) {
+    header { background: rgba(251,247,240,0.92); }
+  }
+  .header-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 12px 16px 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo-mark {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+      #ff4d8d 0deg, #ffd23f 60deg, #9bf6a3 120deg,
+      #4cc9f0 180deg, #b388ff 240deg, #ff8a3d 300deg, #ff4d8d 360deg);
+    box-shadow: 0 0 0 2px var(--bg-elev), 0 0 12px rgba(255,77,141,0.4);
+    flex-shrink: 0;
+  }
+  .logo-text { line-height: 1.1; }
+  .logo-text small {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-dim);
+    letter-spacing: 0;
+  }
+  .header-spacer { flex: 1; }
+  .fav-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .fav-btn:hover { background: var(--bg-card-hover); }
+  .fav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .fav-count {
+    background: rgba(255,255,255,0.2);
+    padding: 1px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    min-width: 18px;
+    text-align: center;
+  }
+  .fav-btn:not(.active) .fav-count { background: var(--accent); color: #fff; }
+  .fav-btn.active .fav-count { background: rgba(255,255,255,0.25); }
+
+  /* ---------- SEARCH ---------- */
+  .search-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 16px 12px;
+  }
+  .search-input {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 11px 16px 11px 42px;
+    border-radius: 999px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%238a867d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 14px center;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .search-input::placeholder { color: var(--text-faint); }
+
+  /* ---------- FILTER BAR ---------- */
+  .filters {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 16px 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  .filter-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-faint);
+    padding-left: 4px;
+  }
+  .select-wrap {
+    position: relative;
+    width: 100%;
+  }
+  .select-wrap::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 8px; height: 8px;
+    border-right: 2px solid var(--text-dim);
+    border-bottom: 2px solid var(--text-dim);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+    transition: border-color 0.15s;
+  }
+  .select-wrap:focus-within::after { border-color: var(--accent); }
+  .filter-select {
+    width: 100%;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 28px 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .filter-select:hover { background: var(--bg-card-hover); }
+  .filter-select:focus { border-color: var(--accent); }
+  .filter-select.active { border-color: var(--accent); background: var(--bg-card-hover); }
+  .filter-select option {
+    background: var(--bg-card);
+    color: var(--text);
+    font-family: inherit;
+  }
+  /* Hide default IE arrow */
+  .filter-select::-ms-expand { display: none; }
+
+  /* ---------- VIEW TOGGLE ---------- */
+  .view-toggle {
+    max-width: var(--max-w);
+    margin: 4px auto 14px;
+    padding: 0 16px;
+    display: flex;
+    gap: 4px;
+  }
+  .view-toggle-inner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    width: fit-content;
+  }
+  .view-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .view-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* ---------- MAIN ---------- */
+  main {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+
+  /* ---------- DAY HEADER (timeline view) ---------- */
+  .day-section { margin-top: 24px; }
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 14px 0 12px;
+    position: sticky;
+    top: var(--day-header-top, 116px);
+    background: var(--bg);
+    z-index: 10;
+    margin-top: -1px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-name { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+  .day-date {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  .day-pill {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--text-faint);
+    background: var(--bg-card);
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+
+  /* ---------- SCREENING CARDS (timeline) ---------- */
+  .time-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    padding: 10px 0;
+    align-items: start;
+  }
+  .time-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: right;
+    padding-top: 8px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---------- FILM CARD ---------- */
+  .film-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    margin-bottom: 8px;
+    transition: all 0.15s;
+    cursor: pointer;
+    position: relative;
+  }
+  .film-card:hover { background: var(--bg-card-hover); border-color: var(--border-strong); }
+  .film-card.expanded { background: var(--bg-card-hover); border-color: var(--accent); }
+  .film-card.faved::after {
+    content: "★";
+    position: absolute;
+    top: 10px; right: 12px;
+    color: var(--accent-2);
+    font-size: 14px;
+  }
+  .film-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .film-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    color: var(--text);
+    padding-right: 18px;
+  }
+  .film-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .meta-item.dot::before {
+    content: "·";
+    margin-right: 3px;
+    color: var(--text-faint);
+  }
+  .meta-item:first-child::before { display: none; }
+  .meta-item:first-child.dot::before { display: none; }
+  .meta-item.dot { margin-left: -3px; }
+  .screening-line {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .loc-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 11px;
+  }
+  .loc-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .screening-time { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+  .screening-day { color: var(--text-dim); font-size: 11px; }
+  .screening-note {
+    font-size: 11px;
+    color: var(--accent-2);
+    background: rgba(255,210,63,0.12);
+    padding: 2px 7px;
+    border-radius: 5px;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .type-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .type-tag.langfilm { background: rgba(255,77,141,0.15); color: var(--accent); }
+  .type-tag.kurzfilm_block { background: rgba(76,201,240,0.15); color: var(--accent-3); }
+  .type-tag.rosa_brille { background: rgba(255,210,63,0.18); color: var(--accent-2); }
+  .type-tag.vorfilm { background: rgba(155,246,163,0.18); color: var(--accent-4); }
+  .type-tag.rahmen { background: rgba(179,136,255,0.18); color: var(--accent-5); }
+  .film-desc {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-dim);
+    display: none;
+  }
+  .film-card.expanded .film-desc { display: block; }
+  .film-card.expanded .film-desc {
+    animation: fadein 0.2s ease-out;
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .film-extra {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    display: none;
+    font-size: 12px;
+    color: var(--text-faint);
+    gap: 4px 10px;
+    flex-wrap: wrap;
+  }
+  .film-card.expanded .film-extra { display: flex; }
+  .cn-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--accent-2);
+    font-weight: 600;
+    font-size: 11px;
+  }
+  .cn-flag::before {
+    content: "⚠";
+    font-size: 12px;
+  }
+
+  /* ---------- LIST VIEW ---------- */
+  .film-list .film-card { margin-bottom: 10px; }
+
+  /* ---------- EMPTY STATE ---------- */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-faint);
+  }
+  .empty-icon { font-size: 42px; margin-bottom: 12px; }
+  .empty-title { font-size: 16px; font-weight: 700; color: var(--text-dim); margin-bottom: 4px; }
+  .empty-text { font-size: 13px; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 40px 16px 60px;
+    color: var(--text-faint);
+    font-size: 12px;
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  footer h4 { color: var(--text-dim); margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+  footer .info-row { margin-bottom: 4px; }
+  footer .credit { font-size: 11px; opacity: 0.7; }
+
+  /* ---------- COUNT BANNER ---------- */
+  .count-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px 14px;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .count-banner strong { color: var(--text); }
+  .reset-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 600px) {
+    .header-inner { padding: 10px 12px 8px; gap: 8px; }
+    .logo-text small { display: none; }
+    .logo-text { font-size: 16px; }
+    .search-wrap, .filters, .view-toggle, main, footer { padding-left: 12px; padding-right: 12px; }
+    .filters { gap: 6px; padding-bottom: 10px; }
+    .filter-label { font-size: 9px; }
+    .filter-select { padding: 8px 26px 8px 10px; font-size: 12px; }
+    .time-row { grid-template-columns: 48px 1fr; gap: 8px; }
+    .time-label { font-size: 12px; }
+    .film-card { padding: 12px; }
+    .film-title { font-size: 15px; }
+    .day-name { font-size: 16px; }
+  }
+  @media (max-width: 380px) {
+    .time-row { grid-template-columns: 42px 1fr; }
+    .filters { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" onclick="resetAll();return false;">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">
+        Queersicht 2026
+        <small>5.–11.11. · 30. Jubiläum · Bern</small>
+      </span>
+    </a>
+    <span class="header-spacer"></span>
+    <button class="fav-btn" id="favBtn" onclick="toggleFavOnly()">
+      <span>★ Merkliste</span>
+      <span class="fav-count" id="favCount">0</span>
+    </button>
+  </div>
+  <div class="search-wrap">
+    <input type="search" class="search-input" id="searchInput"
+           placeholder="Film, Land, Regie, Thema suchen…" autocomplete="off">
+  </div>
+  <div class="filters" id="filters"></div>
+</header>
+
+<div class="view-toggle"><div class="view-toggle-inner" role="tablist">
+  <button class="view-btn active" data-view="timeline" onclick="setView('timeline')">⏱ Nach Zeit</button>
+  <button class="view-btn" data-view="list" onclick="setView('list')">🎬 Nach Film</button>
+</div></div>
+
+<main>
+  <div class="count-banner" id="countBanner">
+    <span id="countText">Lade Programm…</span>
+    <button class="reset-btn" id="resetBtn" onclick="resetAll()" style="display:none">Filter zurücksetzen</button>
+  </div>
+  <div id="results"></div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Queersicht 2026</h4>
+      <div class="info-row">LGBTIAQ+ Filmfestival Bern</div>
+      <div class="info-row">5.–11. November 2026 · 30. Jubiläum</div>
+      <div class="info-row"><a href="https://queersicht.ch">queersicht.ch</a></div>
+      <div class="info-row">Instagram: <a href="https://instagram.com/queersicht">@queersicht</a></div>
+    </div>
+    <div>
+      <h4>Tickets</h4>
+      <div class="info-row">Vorverkauf: <a href="https://eventfrog.ch/queersicht">eventfrog.ch/queersicht</a></div>
+      <div class="info-row">+ CHF 1.– Vorverkaufsgebühr</div>
+      <div class="info-row">Tageskasse: 45 Min. vor Vorstellung</div>
+      <div class="info-row">Normalpreis CHF 18.– · mit Abo CHF 11.–</div>
+      <div class="info-row">Festivalabo CHF 25.– (gratis f. &lt;26 J.)</div>
+    </div>
+    <div>
+      <h4>Zugänglichkeit</h4>
+      <div class="info-row">Begleitetes Check-in möglich</div>
+      <div class="info-row">Mail: zugaenglichkeit@queersicht.ch</div>
+      <div class="info-row">Tel: 079 825 58 87</div>
+      <div class="info-row">OK-Mitglieder: rotes Schlüsselband</div>
+    </div>
+    <div>
+      <h4>Content Notes</h4>
+      <div class="info-row">A: Gewalt &amp; Zwang</div>
+      <div class="info-row">B: Gesundheit &amp; Vulnerabilität</div>
+      <div class="info-row">C: Diskriminierung &amp; strukturelle Gewalt</div>
+      <div class="info-row">D: Sensorische / technische Aspekte</div>
+      <div class="info-row">Details: <a href="https://queersicht.ch">queersicht.ch</a></div>
+    </div>
+  </div>
+  <div class="credit">
+    Inoffizielle Programm-App für Offline-Nutzung auf dem Handy · Daten basieren auf dem Programmheft 2026 · Für verbindliche Infos und Programmänderungen immer queersicht.ch prüfen.
+  </div>
+</footer>
+
+<script id="app-data" type="application/json">{"festival": {"name": "Queersicht", "subtitle": "LGBTIAQ+ Filmfestival Bern", "edition": "30. Jubiläum", "dates": "5.–11.11.2026", "year": 2026}, "days": [{"key": "Do", "date": "05.11.", "de": "Donnerstag", "fr": "Jeudi"}, {"key": "Fr", "date": "06.11.", "de": "Freitag", "fr": "Vendredi"}, {"key": "Sa", "date": "07.11.", "de": "Samstag", "fr": "Samedi"}, {"key": "So", "date": "08.11.", "de": "Sonntag", "fr": "Dimanche"}, {"key": "Mo", "date": "09.11.", "de": "Montag", "fr": "Lundi"}, {"key": "Di", "date": "10.11.", "de": "Dienstag", "fr": "Mardi"}, {"key": "Mi", "date": "11.11.", "de": "Mittwoch", "fr": "Mercredi"}], "locations": [{"key": "ABC", "name": "Kino ABC"}, {"key": "CINEMATTE", "name": "Cinématte"}, {"key": "KELLERKINO", "name": "Kellerkino"}, {"key": "REX", "name": "Kino REX"}, {"key": "REITSCHULE", "name": "Kino in der Reitschule"}, {"key": "LICHTSPIEL", "name": "Lichtspiel"}, {"key": "PROGR", "name": "Progr (kleine Bühne)"}, {"key": "QFR", "name": "queerfeministischer Raum (Reitschule)"}, {"key": "DACHSTOCK", "name": "Dachstock (Reitschule)"}], "films": [{"id": "feito-pipa", "title": "Feito Pipa", "type": "langfilm", "country": "Brasilien", "year": 2026, "language": "Portugiesisch", "subtitles": "d", "duration_min": 93, "director": "Allan Deberton", "cn": true, "description": "Glitzer im Gesicht, Pokale im Zimmer, Farbe an allem, was er trägt: Gugu, knapp zwölf, will Fussballstar werden und bewegt sich durch die Welt, als wäre sie für ihn gebaut. Sie zu retten, hält er noch für einen realistischen Plan – und merkt doch längst, dass manche Erwachsene ihn wie ein Problem ansehen. Seine Grossmutter Dilma sieht ein Kind. In ihrem Haus am Stausee im ländlichen Ceará muss Gugu nichts erklären; hier ist Liebe eine Selbstverständlichkeit – viel Gelächter inklusive. Bis Dilma anfängt, Dinge zu vergessen – und Gugu beginnt zu hüten, was ihn bisher beschützt hat.", "screenings": [{"day": "05.11.", "time": "20:30", "location": "ABC", "note": "Eröffnungsabend – mit Kurz-Doku über das Queersicht OK vor dem Film"}, {"day": "08.11.", "time": "18:00", "location": "CINEMATTE"}]}, {"id": "a-very-like-crazy-date", "title": "A Very, Like, Crazy Date", "type": "langfilm", "country": "Niederlande", "year": 2026, "language": "Niederländisch", "subtitles": "e", "duration_min": 77, "director": "Tim Kamps", "cn": false, "description": "Ein erstes Date, alles ist offen – bis die beiden mitten in einem Raubüberfall sitzen. Ein denkbar ungünstiger Moment zum Kennenlernen. Oder der schnellste Weg herauszufinden, wer der andere wirklich ist. Eine niederländische Komödie, mit tollpatschigen Räubern, einem nervösen Landjungen und einem selbstsicheren Stadtboy. Was kann da schon schief gehen?", "screenings": [{"day": "07.11.", "time": "13:00", "location": "CINEMATTE"}, {"day": "10.11.", "time": "18:00", "location": "REX"}]}, {"id": "a-voix-basse", "title": "À voix basse", "type": "langfilm", "country": "Frankreich", "year": 2026, "language": "Französisch, Arabisch", "subtitles": "d/f", "duration_min": 111, "director": "Leyla Bouzid", "cn": true, "description": "Lilia kehrt für die Beerdigung ihres Onkels nach Tunesien zurück – ihre Familie ahnt nichts von ihrem Leben in Paris und ihrer Freundin Alice, die heimlich im Hotel wartet. Als sie merkt, dass der Tod ihres Onkels mit dessen Homosexualität zu tun hat, bricht sie das Schweigen dreier Frauengenerationen. Zart, mutig, voller unausgesprochener Wahrheiten.", "screenings": [{"day": "06.11.", "time": "18:00", "location": "CINEMATTE"}]}, {"id": "apolo", "title": "Apolo", "type": "langfilm", "country": "Brasilien", "year": 2025, "language": "Portugiesisch", "subtitles": "d", "duration_min": 83, "director": "Tainá Müller & Ísis Broken", "cn": true, "description": "Eine Schwangerschaft ist eine lebensverändernde Erfahrung. Umso mehr, wenn beide Eltern trans sind. Lourenzo und Ísis stehen liebevoll für ihr Recht ein, Eltern zu werden und leben feinfühlig vor, was es heisst, jenseits der Schwangerschaft Mutter und Vater zu sein. Ein filmischer Brief queerer Eltern an ihr Kind – und an alle Zuschauenden.", "screenings": [{"day": "08.11.", "time": "15:30", "location": "REITSCHULE"}]}, {"id": "barbara-forever", "title": "Barbara Forever", "type": "langfilm", "country": "USA", "year": 2026, "language": "Englisch", "subtitles": "d", "duration_min": 101, "director": "Brydie O'Connor", "cn": true, "description": "Barbara Hammer fuhr in den 70ern mit Super-8-Kamera und Motorrad los und drehte die ersten lesbischen Filme überhaupt – mutig, nackt, unangepasst. «Barbara Forever» wühlt jetzt in ihrem Archiv: Sex, Liebe, Krankheit, Kampf, alles drin. Eine Doku über eine Frau, die zwischen Selbstverwirklichung und Konsens balanciert. Lasst euch von der Dyke-Poesie berühren!", "screenings": [{"day": "08.11.", "time": "15:30", "location": "CINEMATTE"}]}, {"id": "between-dreams-and-hope", "title": "Between Dreams and Hope", "type": "langfilm", "country": "Iran", "year": 2025, "language": "Persisch", "subtitles": "d", "duration_min": 106, "director": "Farnoosh Samadi", "presented_by": "RaBe", "cn": true, "description": "Azad steht vor dem Haus, aus dem er nach seinem Coming-out verstossen wurde. Für seine Transition braucht er das schriftliche Einverständnis seines Vaters. Die Konfrontation mit der Familie eskaliert und Azad gerät in Lebensgefahr. Ein mutiger Film voll Nervenkitzel, dessen Inhalt beim Dreh vor iranischen Behörden und Gesellschaft vertuscht werden musste.", "screenings": [{"day": "08.11.", "time": "20:30", "location": "REX"}, {"day": "09.11.", "time": "18:00", "location": "KELLERKINO"}]}, {"id": "black-burns-fast", "title": "Black Burns Fast", "type": "langfilm", "country": "Südafrika", "year": 2026, "language": "Xhosa, Englisch", "subtitles": "d", "duration_min": 97, "director": "Sandulela Asanda", "cn": true, "description": "Eine Elite-Mädchenschule in Südafrika: Luthando hat sich ihr Stipendium hart erkämpft und ist erfolgreich unterwegs – bis eine Neue auftaucht und alles durcheinanderbringt. Verknallt sein kostet hier mehr als Nerven: Stipendium, Ruf und die älteste Freundschaft stehen auf dem Spiel. Eine Coming-of-Age-Geschichte voller Queer Joy.", "screenings": [{"day": "06.11.", "time": "20:30", "location": "REX"}, {"day": "10.11.", "time": "20:30", "location": "REITSCHULE"}]}, {"id": "cactus-pears", "title": "Cactus Pears", "type": "langfilm", "country": "Indien", "year": 2025, "language": "Marathi", "subtitles": "d", "duration_min": 112, "director": "Rohan Kanawade", "cn": false, "description": "In seinem autofiktionalen Spielfilmdebüt erzählt Rohan Kanawade die Geschichte von Anand, der nach dem Tod seines Vaters für die zehntägige Trauerzeit in sein Heimatdorf im westindischen Maharashtra zurückkehrt. Dort begegnet er dem Bauern Balya, der sich dem Druck seines Umfelds widersetzt, zu heiraten. Zwischen den beiden entwickelt sich eine zarte Romanze.", "screenings": [{"day": "08.11.", "time": "18:00", "location": "REX"}, {"day": "10.11.", "time": "18:00", "location": "LICHTSPIEL"}]}, {"id": "choosing-cutting-silencing", "title": "Choosing, Cutting, Silencing", "type": "langfilm", "country": "Niederlande", "year": 2024, "language": "Niederländisch", "subtitles": "d", "duration_min": 59, "director": "Chris van den Brink, Marieke Schoutsen, Sharan Bala", "cn": true, "description": "Marieke und Sharan sind intergeschlechtlich. Ihre Treffen offenbaren eine gemeinsame Vergangenheit aus Ärzt*innen-Besuchen, Operationen und auferlegtem Schweigen. Mit 34 Jahren beginnen sie, ihre Geschichte zu erforschen. Dabei stossen sie auf schockierende Wahrheiten, die von der jahrzehntelangen Tabuisierung intergeschlechtlicher Körper zeugen.", "screenings": [{"day": "07.11.", "time": "15:30", "location": "CINEMATTE"}, {"day": "11.11.", "time": "18:00", "location": "KELLERKINO"}]}, {"id": "coward", "title": "Coward", "type": "langfilm", "country": "Belgien, Frankreich, Niederlande", "year": 2026, "language": "Französisch, Niederländisch", "subtitles": "d/f", "duration_min": 126, "director": "Lukas Dhont", "cn": true, "description": "Belgien, 1916: Der junge Soldat Pierre will sich an der Front beweisen. Hinter den Linien trifft er auf Francis, der mit Theateraufführungen die Moral der Truppe hebt. Zwischen Kriegslärm und starren Männerbildern öffnet sich ein Raum für Nähe, Begehren und die leise Hoffnung, für einen Moment sich selbst sein zu dürfen.", "screenings": [{"day": "08.11.", "time": "20:30", "location": "CINEMATTE"}, {"day": "11.11.", "time": "20:30", "location": "KELLERKINO"}]}, {"id": "critical-failure", "title": "Critical Failure", "type": "langfilm", "country": "Frankreich", "year": 2024, "language": "Französisch, Englisch", "subtitles": "d", "duration_min": 45, "director": "Phoenix Atala", "cn": true, "description": "Künstler*in Ekko ist ein Roboter und versucht mittels Choreographie den eigenen Code zu hacken. Diese Emanzipation verfliesst mit den Dreharbeiten an einem queeren, dekolonialen und experimentellen Film. Zersetzt, vervielfacht und nichtlinear: Critical Failure erweckt ein neues, nicht normatives und dekonstruiertes Kino zum Leben. Wird gezeigt mit «Unsere Stimmen».", "screenings": [{"day": "07.11.", "time": "15:30", "location": "LICHTSPIEL", "note": "Mit «Unsere Stimmen» (52')"}, {"day": "08.11.", "time": "15:30", "location": "LICHTSPIEL", "note": "Mit «Unsere Stimmen» (52')"}]}, {"id": "downtown", "title": "Downtown", "type": "langfilm", "country": "Niederlande", "year": 2026, "language": "Niederländisch, Englisch", "subtitles": "d", "duration_min": 98, "director": "Michiel van Erp", "cn": false, "description": "Amsterdam 1988: Ronnie, Lennart und Bas stürzen sich in Nächte geprägt von Freundschaft, Sex und Drogen – bis ein Virus ohne Namen Schatten wirft und plötzlich einer von ihnen von der Bildfläche verschwindet. Über dreissig Jahre später, im leeren Lockdown-Amsterdam, ein Gesicht in der Metro … Ein Abend beginnt, mit dem niemensch gerechnet hat.", "screenings": [{"day": "07.11.", "time": "20:30", "location": "KELLERKINO"}, {"day": "09.11.", "time": "20:30", "location": "CINEMATTE"}]}, {"id": "framing-agnes", "title": "Framing Agnes", "type": "langfilm", "country": "Kanada, USA", "year": 2022, "language": "Englisch", "subtitles": "d", "duration_min": 75, "director": "Chase Joynt", "cn": true, "description": "In einer US-Gesundheitsstudie aus den 50ern stecken Bruchstücke früher trans* Leben. Ein queeres Team nähert sich ihnen heute an, ohne sie zu vereinnahmen: Die Interviews der Studie werden in einer fiktiven Talkshow reenacted und aktiv reflektiert. Was wollen wir über ihre Geschichten wissen, wie können wir ihnen heute begegnen? Augenzwinkernd und berührend.", "screenings": [{"day": "07.11.", "time": "13:00", "location": "REX", "note": "Mit Vorfilm «Gender Reveal» (13')"}]}, {"id": "garance", "title": "Garance", "type": "langfilm", "country": "Frankreich", "year": 2026, "language": "Französisch", "subtitles": "d", "duration_min": 120, "director": "Jeanne Herry", "cn": false, "description": "Garance, eine junge Schauspielerin, feiert das Leben und trinkt gegen die Angst an: Party für Party, Umzug für Umzug. Acht Jahre voller Chaos, bis Bühnenbildnerin Pauline auftaucht: erst Freundschaft, dann die grosse Liebe, mitten im Sturm aus Sucht, Zuneigung und Selbstfindung. Zerstörerisch schön, mit Feingefühl.", "screenings": [{"day": "08.11.", "time": "18:00", "location": "KELLERKINO"}, {"day": "09.11.", "time": "20:30", "location": "REX"}]}, {"id": "ivan-hadoum", "title": "Iván & Hadoum", "type": "langfilm", "country": "Spanien, Deutschland, Belgien", "year": 2026, "language": "Spanisch, Arabisch", "subtitles": "d", "duration_min": 103, "director": "Ian de la Rosa", "cn": true, "description": "In den Gewächshäusern von Almería verliebt sich Iván, ein Transmann, in seine neue Kollegin Hadoum, die spanisch-marokkanischer Herkunft ist. Als er endlich befördert wird und Hadoums Vorgesetzter wird, wird ihre junge Liebe auf die Probe gestellt. Zwischen Familie, Arbeit und gesellschaftlichen Erwartungen muss Iván entscheiden, wer er sein will.", "screenings": [{"day": "08.11.", "time": "13:00", "location": "REX"}, {"day": "10.11.", "time": "20:30", "location": "LICHTSPIEL"}]}, {"id": "jaripeo", "title": "Jaripeo", "type": "langfilm", "country": "Mexiko, USA, Frankreich", "year": 2026, "language": "Spanisch, Englisch", "subtitles": "d", "duration_min": 70, "director": "Efraín Mojica, Rebecca Zweig", "cn": true, "description": "Michoacán, Mexiko: In der Arena des Jaripeo wird Männlichkeit zelebriert. Doch zwischen Staub, Bier und Blaskapelle läuft ein zweiter Film – Blicke, die zu lange dauern, Berührungen, die niemand benennt. Aus Vérité und Super 8 entsteht ein feinfühliges Porträt queeren Begehrens im Herzen des Machismo.", "screenings": [{"day": "08.11.", "time": "15:30", "location": "REX"}]}, {"id": "jim-queen", "title": "Jim Queen", "type": "langfilm", "country": "Frankreich, Belgien", "year": 2026, "language": "Französisch", "subtitles": "d", "duration_min": 80, "director": "Nicolas Athané, Marco Nguyen", "cn": true, "description": "In Paris geht ein Virus um und macht schwule Männer hetero. Als sein Leben zusammenbricht, zieht ein Influencer mit einem Twink los: Im Marais soll es ein Gegenmittel geben. Ein französischer Animationsfilm, grell, obszön und respektlos gegen alles – Cannes zeigte ihn zu Recht erst nach Mitternacht.", "screenings": [{"day": "06.11.", "time": "20:30", "location": "LICHTSPIEL"}]}, {"id": "jimpa", "title": "Jimpa", "type": "langfilm", "country": "Australien, Niederlande, Finnland", "year": 2025, "language": "Englisch", "subtitles": "—", "duration_min": 113, "director": "Sophie Hyde", "cn": true, "description": "Hannah reist mit ihrem nicht-binären Teenagerkind Frances nach Amsterdam, um ihren schwulen Vater zu besuchen. Frances bewundert den Grossvater und die queeren Geschichten von früher. Witzig, zugänglich, voller Traurigkeit und Freude. Der Film beleuchtet differenziert, wie viel sich in drei Generationen verändert hat. Eine Hommage an die LGBTIAQ+-Community.", "screenings": [{"day": "07.11.", "time": "20:30", "location": "CINEMATTE"}, {"day": "09.11.", "time": "18:00", "location": "REX"}]}, {"id": "jone-batzuetan", "title": "Jone, Batzuetan", "type": "langfilm", "country": "Spanien", "year": 2025, "language": "Baskisch, Spanisch", "subtitles": "d", "duration_min": 80, "director": "Sara Fantova", "cn": true, "description": "Während ganz Bilbao beim Semana-Grande-Fest tanzt, verliebt sich Jone, 20, zum ersten Mal – in Olga, mit all dem Übermut und der Unbesiegbarkeit einer jungen Sommerliebe. Zu Hause wartet ihr kranker Vater, dessen Parkinson jeden Tag mehr Kraft raubt. Zwischen Feuerwerk und Angst vor dem Alleinsein findet Jone ihre eigene, zarte Version des Erwachsenwerdens.", "screenings": [{"day": "05.11.", "time": "20:30", "location": "KELLERKINO"}, {"day": "09.11.", "time": "20:30", "location": "LICHTSPIEL"}]}, {"id": "julian", "title": "Julian", "type": "langfilm", "country": "Belgien, Niederlande", "year": 2025, "language": "Englisch, Französisch, Niederländisch", "subtitles": "d", "duration_min": 91, "director": "Cato Kusters", "cn": true, "description": "Fleur und Julian verlieben sich Hals über Kopf und fassen einen kühnen Plan: heiraten, einmal in jedem Land, in dem zwei Frauen das dürfen. Ein Roadtrip voller Trotz, Freiheit und Herzklopfen – bis nach nur vier Hochzeiten alles jäh zum Stillstand kommt. Basierend auf einer wahren Geschichte erzählt «Julian» von Liebe, die grösser ist als jede Grenze.", "screenings": [{"day": "07.11.", "time": "23:00", "location": "REX"}, {"day": "10.11.", "time": "18:00", "location": "KELLERKINO"}]}, {"id": "katzenball", "title": "Katzenball", "type": "langfilm", "country": "Schweiz", "year": 2005, "language": "Schweizerdeutsch, Französisch", "subtitles": "—", "duration_min": 87, "director": "Veronika Minder", "presented_by": "bern.lgbt", "cn": false, "description": "Siebzig Jahre Schweizer Geschichte – erzählt von denen, die darin kaum vorkamen: Fünf Frauen aus fünf Generationen berichten von Treffpunkten, Codes, Netzwerken und der Kunst, einander zu finden. Veronika Minders Teddy-prämierter Klassiker – von der Mitbegründerin von Queersicht.", "screenings": [{"day": "07.11.", "time": "20:30", "location": "LICHTSPIEL"}]}, {"id": "la-bola-negra", "title": "La bola negra", "type": "langfilm", "country": "Spanien, Frankreich", "year": 2026, "language": "Spanisch", "subtitles": "d/f", "duration_min": 155, "director": "Javier Ambrossi, Javier Calvo", "cn": true, "description": "Ein schwules Herz ist ein Ozean voller Geheimnisse. «La bola negra» erzählt die Geschichten dreier Männer, deren Leben durch Sexualität, Begierde und Schmerz, aber auch durch Schweigen miteinander verflochten sind. Die Gewalt des Ungesagten zieht sich als Vermächtnis queerer Existenz mit roher Wucht durch dieses monumentale Werk. Bei uns zur Vorpremiere.", "screenings": [{"day": "07.11.", "time": "20:00", "location": "REX"}]}, {"id": "la-vie-dune-femme", "title": "La vie d'une femme", "type": "langfilm", "country": "Frankreich, Belgien", "year": 2026, "language": "Französisch", "subtitles": "d", "duration_min": 100, "director": "Charline Bourgeois-Tacquet", "cn": false, "description": "Gabrielle, 55, hat sich ihr Leben genau so gebaut: Chirurgin, Klinikleiterin, Ehemann und pflegebedürftige Mutter fest eingeplant. Alles unter Kontrolle – bis eine Schriftstellerin sie für ein Buch beobachtet und Gabrielle eine späte queere Sehnsucht entdeckt. Plötzlich verschiebt sich ein Gleichgewicht, das jahrelang unantastbar schien.", "screenings": [{"day": "07.11.", "time": "18:00", "location": "KELLERKINO"}, {"day": "11.11.", "time": "20:30", "location": "LICHTSPIEL"}]}, {"id": "les-matins-merveilleux", "title": "Les Matins Merveilleux", "type": "langfilm", "country": "Frankreich", "year": 2026, "language": "Französisch", "subtitles": "d", "duration_min": 87, "director": "Avril Besson", "presented_by": "360°", "cn": true, "description": "Eine unsichtbare Kraft hält Charlie von der Rückreise nach Paris ab – die Spuren ihrer verstorbenen Mutter, Discomusik, die einen Weinhändler zu Tränen rührt, die Kellnerin Marina, die sich nach Freiheit sehnt. Ein unwiderstehlicher Film über Begegnungen und Neugierde. Eine sanfte Annäherung zweier Frauen, die einen wundervollen Morgen möglich werden lassen.", "screenings": [{"day": "07.11.", "time": "15:30", "location": "REX"}, {"day": "10.11.", "time": "20:30", "location": "CINEMATTE"}]}, {"id": "manok", "title": "Manok", "type": "langfilm", "country": "Südkorea", "year": 2026, "language": "Koreanisch", "subtitles": "d", "duration_min": 108, "director": "Yujin Lee", "cn": true, "description": "Manok schmeisst seit 20 Jahren Seouls Lesbenbar. Doch die junge Szene interessiert sich immer weniger für sie. Als dann auch noch ihre Mutter stirbt, kehrt Manok in ihr konservatives Heimatdorf zurück. Statt sich zu verkriechen, fordert sie ihren homophoben Ex-Mann als Dorfvorsteher heraus. Laut, chaotisch, unperfekt – queere Midlife-Rebellion vom Feinsten.", "screenings": [{"day": "08.11.", "time": "20:30", "location": "KELLERKINO"}, {"day": "11.11.", "time": "18:00", "location": "REITSCHULE"}]}, {"id": "maspalomas", "title": "Maspalomas", "type": "langfilm", "country": "Spanien", "year": 2025, "language": "Baskisch, Spanisch", "subtitles": "d", "duration_min": 115, "director": "Aitor Arregi, Jose Mari Goenaga", "cn": true, "description": "Mit 76 geniesst Vicente sein aktives Leben in Maspalomas. Ein Schicksalsschlag bringt ihn zurück nach San Sebastián in ein Pflegeheim – und zu seiner Tochter. Dort stellt sich ihm die Frage nach einem weiteren Coming-out. Ein Film über ungewollte Veränderungen, die damit verbundenen Herausforderungen und Versöhnung – mit sich selbst und dem Umfeld.", "screenings": [{"day": "06.11.", "time": "18:00", "location": "LICHTSPIEL"}]}, {"id": "nagi-notes", "title": "Nagi Notes", "type": "langfilm", "country": "Japan, Frankreich, Philippinen", "year": 2026, "language": "Japanisch", "subtitles": "e", "duration_min": 110, "director": "Kōji Fukada", "cn": false, "description": "Im ländlichen Nagi in der Präfektur Okayama besucht Yuri, eine Architektin aus Tokio, die Bildhauerin Yoriko, um ihr Modell zu stehen. Poetisch und entschleunigt entfaltet der Film Yorikos unbewältigten Schmerz. In den stillen Landschaften von Nagi entsteht nach und nach eine zarte Ahnung davon, was es bedeutet, sich zu verlieben.", "screenings": [{"day": "07.11.", "time": "13:00", "location": "LICHTSPIEL"}]}, {"id": "nuestro-cuerpo", "title": "Nuestro cuerpo es una estrella que se expande", "type": "langfilm", "country": "Mexiko", "year": 2025, "language": "Spanisch, Englisch", "subtitles": "e", "duration_min": 84, "director": "Semillites Hernández Velasco, Tania Hernández Velasco", "presented_by": "Journal B", "cn": true, "description": "Zwei queere Geschwister waten durch das braune Terrain ihrer eigenen Körper – Landschaften, die sie einst abgelehnt haben, aus Haut, Salz und Träumen ihrer Ahn*innen. Mit empowernder Intimität oszilliert der bildgewaltige Film zwischen Körper und Raum und definiert Identität jenseits kolonialer Erzählungen neu.", "screenings": [{"day": "06.11.", "time": "22:45", "location": "KELLERKINO"}, {"day": "11.11.", "time": "18:00", "location": "LICHTSPIEL"}]}, {"id": "on-the-road", "title": "On the Road", "type": "langfilm", "country": "Mexiko", "year": 2025, "language": "Spanisch", "subtitles": "d", "duration_min": 93, "director": "David Pablos", "presented_by": "gay.ch", "cn": true, "description": "Veneno überlebt an Autobahnraststätten Nordmexikos, indem er sich Truckern verkauft – bis er Muñeco trifft, einen schweigsamen Fahrer, den er kurzerhand überredet, ihn mitzunehmen. Aus der Zufallsbekanntschaft wird eine zärtliche, gefährliche Liebe, während Venenos dunkle Vergangenheit die beiden einholt. Gewaltvoll, roh, heiss und herzzerreissend.", "screenings": [{"day": "07.11.", "time": "22:45", "location": "KELLERKINO"}, {"day": "09.11.", "time": "18:00", "location": "LICHTSPIEL"}]}, {"id": "on-the-sea", "title": "On the Sea", "type": "langfilm", "country": "UK", "year": 2025, "language": "Englisch", "subtitles": "d", "duration_min": 111, "director": "Helen Walsh", "presented_by": "Display Magazin", "cn": true, "description": "Jack hat alles, was ein Leben als Fischer in Wales ordentlich aussehen lässt: eine ergiebige Muschelbank, eine Ehe seit Jugendtagen, einen halbwüchsigen Sohn, seinen Platz im Dorf. Dann heuert ein reisender Deckhand an, und ein jahrzehntelang unterdrücktes Verlangen meldet sich zurück. Eine Geschichte der inneren Zerrissenheit – rau, sinnlich, unerbittlich nah erzählt.", "screenings": [{"day": "06.11.", "time": "20:30", "location": "CINEMATTE"}, {"day": "10.11.", "time": "20:30", "location": "REX"}]}, {"id": "out-laws", "title": "Out Laws", "type": "langfilm", "country": "UK, Namibia", "year": 2025, "language": "Englisch, Damara", "subtitles": "d", "duration_min": 79, "director": "Lexi Powner, James Lewis", "presented_by": "WOZ – Die Wochenzeitung", "cn": true, "description": "Drei Aktivist*innen, ein Gesetz: Friedel aus Namibia, Rosanna aus Sri Lanka, Raven aus Barbados – alle kämpfen gegen Anti-Homosexualitäts-Gesetze, die aus dem britischen Empire stammen. Während der Kolonialismus Homophobie exportierte, bringen sie Solidarität zurück: gemeinsam vor Gericht, gemeinsam an der Pride in London. Zwischen Geschichte und Widerstand.", "screenings": [{"day": "06.11.", "time": "18:00", "location": "KELLERKINO"}, {"day": "11.11.", "time": "20:30", "location": "REX"}]}, {"id": "shes-the-he", "title": "She's the He", "type": "langfilm", "country": "USA", "year": 2025, "language": "Englisch", "subtitles": "d", "duration_min": 81, "director": "Siobhan McCarthy", "cn": true, "description": "Alex und Ethan sind beste Freunde, aber alle halten sie für ein schwules Paar. Ihr Plan, kurz vor dem Abschluss: sich als trans Frauen outen, um die Gerüchte loszuwerden und Alex' Schwarm zu beeindrucken. Gesagt, getan – bis bei Ethan ein Licht aufgeht … Trashig, chaotisch, hemmungslos albern. Eine High-School-Comedy, von und für Queers.", "screenings": [{"day": "06.11.", "time": "20:30", "location": "KELLERKINO"}, {"day": "07.11.", "time": "18:00", "location": "REX"}]}, {"id": "shelter", "title": "Shelter", "type": "langfilm", "country": "Spanien", "year": 2026, "language": "Spanisch", "subtitles": "e", "duration_min": 92, "director": "Adrián Silvestre", "presented_by": "WOZ – Die Wochenzeitung", "cn": true, "description": "Von ihren Heimatländern abgelehnt, wollten vier Queers in die USA – ihre Träume sind gewaltsam geplatzt. So bauen sie sich in einer Gemeinschaft in Guatemala ein neues Leben auf. Sie teilen ihre Wunden und Erinnerungen, erzählen von ihren Erfahrungen mit Durchhaltevermögen, Solidarität und Neuanfang. Ein intimes und ehrliches Portrait über queere Fluchtrealitäten.", "screenings": [{"day": "07.11.", "time": "18:00", "location": "CINEMATTE"}, {"day": "09.11.", "time": "20:30", "location": "REITSCHULE"}]}, {"id": "hidden-face-of-earth", "title": "The Hidden Face of the Earth", "type": "langfilm", "country": "Frankreich", "year": 2026, "language": "Französisch, Englisch", "subtitles": "e", "duration_min": 68, "director": "Arnaud Alain", "cn": false, "description": "Dem langsamen Verlust seines Augenlichts begegnet der Fotograf Dimitri mit seiner Kamera. Begleitet von einem Regisseur, lässt er Menschen von ihrem Leben erzählen. Träume, Gedanken und Realität verschwimmen zu einem kunstvollen Blick auf das Leben – eine Reise in eine Welt voller Sinneseindrücke.", "screenings": [{"day": "11.11.", "time": "18:00", "location": "REX", "note": "Mit Vorfilm «On Queer Aging and Endings» (19')"}]}, {"id": "two-girls-in-love", "title": "The Incredible True Adventure of Two Girls in Love", "type": "langfilm", "country": "USA", "year": 1995, "language": "Englisch", "subtitles": "d", "duration_min": 94, "director": "Maria Maggenti", "cn": true, "description": "Randy schraubt rauchend an Autos, als Evie mit ihrem Range Rover vorfährt – Working-Class-Tomboy trifft Homecoming-Queen, und schon knistert's. 1995 drehte Maria Maggenti mit rein weiblicher Crew diesen Lesbenklassiker, so warmherzig und komisch, dass mensch heute noch mitfiebert. Eine ausgegrabene Filmperle, mit Laurel Holloman von «The L Word».", "screenings": [{"day": "11.11.", "time": "18:00", "location": "REX"}]}, {"id": "mysterious-gaze-flamingo", "title": "The Mysterious Gaze of the Flamingo", "type": "langfilm", "country": "Frankreich, Chile, Deutschland", "year": 2025, "language": "Spanisch", "subtitles": "d", "duration_min": 109, "director": "Diego Céspedes", "cn": true, "description": "Einer Gruppe trans Frauen inmitten eines Minenarbeiter-Dorfs wird zur Last gelegt, in Männern über Blickkontakt ein unbändiges Begehren zu erwecken. Eine magisch-tragische Geschichte über eine unerschütterliche Wahlfamilie, die von fragiler Männlichkeit bedroht wird. Liebevoll, von Gewalt durchzogen, ironisch, surreal.", "screenings": [{"day": "06.11.", "time": "18:00", "location": "REX"}, {"day": "11.11.", "time": "20:30", "location": "CINEMATTE"}]}, {"id": "uchronia", "title": "Uchronia: Parallel histories of queer revolt", "type": "langfilm", "country": "Griechenland, Niederlande", "year": 2026, "language": "Englisch, Französisch, Deutsch, Russisch, Griechisch, Arabisch", "subtitles": "d", "duration_min": 97, "director": "Fil Ieropoulos", "cn": false, "description": "Uchronia ist ein von Rimbauds «Une Saison En Enfer» inspirierter psychedelischer Doku-Essay. Des Dichters Geist reist durch die Geschichte, um Revolutionären und queeren Freaks zu begegnen. Eine Collage queerer Möglichkeiten in einem kompromisslosen politisch-philosophischen Poetry Slam ohnegleichen. Schweizer Vorpremiere in Anwesenheit des Regisseurs.", "screenings": [{"day": "08.11.", "time": "13:00", "location": "LICHTSPIEL"}]}, {"id": "unsere-stimmen", "title": "Unsere Stimmen", "type": "langfilm", "country": "Schweiz", "year": 2026, "language": "Englisch, Xhosa", "subtitles": "d", "duration_min": 52, "director": "Svetlana Rodina, Lauren Stoop", "presented_by": "Bern für den Film", "cn": true, "description": "Königin Mamani heiratete im Südafrika des 18. Jahrhunderts eine andere Frau – eine Geschichte, die der weisse klassische Musik-Kanon nie erzählen wollte. Komponistin Monthati Masebe holt sie jetzt als Oper zurück und bricht damit gleich zwei Kolonialismen auf: den kulturellen und den queerfeindlichen. Eine dekoloniale, queere Stimme, laut und eigen.", "screenings": [{"day": "07.11.", "time": "15:30", "location": "LICHTSPIEL", "note": "Wird zusammen mit «Critical Failure» gezeigt"}, {"day": "08.11.", "time": "15:30", "location": "LICHTSPIEL", "note": "Wird zusammen mit «Critical Failure» gezeigt"}]}, {"id": "was-haben-wir-gelacht", "title": "Was haben wir gelacht", "type": "langfilm", "country": "Deutschland", "year": 2026, "language": "Deutsch", "subtitles": "e", "duration_min": 98, "director": "Eva Müller, Isabel Schneider", "cn": true, "description": "Maren Kroymann, Hella von Sinnen, Bettina Böttinger, Gaby Köster und Esther Schweins mussten sich in den 90ern ihren Platz im männerdominierten TV-Zirkus erkämpfen – als Pointe, nie als Pointen-Lieferantin. Jetzt schauen sie gemeinsam zurück; ehrlich, mit Wut und schonungsloser Selbstkritik. Ein Film über Humor, Macht und lesbische Sichtbarkeit.", "screenings": [{"day": "07.11.", "time": "15:30", "location": "KELLERKINO"}]}, {"id": "what-will-i-become", "title": "What Will I Become?", "type": "langfilm", "country": "USA", "year": 2026, "language": "Englisch", "subtitles": "d", "duration_min": 88, "director": "Lexie Bean, Logan Rozos", "presented_by": "ABQ. +", "cn": true, "description": "Blake war der erste offen trans lebende Homecoming King North Carolinas, Kyler ein autistischer Pianist – beide starben viel zu jung. Der Film erzählt von ihrem Leben, ihrer Kreativität, ihrem Kampf um Sichtbarkeit, während die trans Regisseur*innen ihre eigene Geschichte daneben legen: Wir sind noch hier. Mit Q&A.", "screenings": [{"day": "08.11.", "time": "13:00", "location": "CINEMATTE"}]}, {"id": "whisperings-of-the-moon", "title": "Whisperings of the Moon", "type": "langfilm", "country": "Hongkong, China, Kambodscha", "year": 2025, "language": "Khmer", "subtitles": "e", "duration_min": 85, "director": "Yuqing Lai", "cn": false, "description": "Die Theaterschauspielerin Nisay kehrt nach dem Tod ihres Vaters in ihre Heimat Kambodscha zurück – und findet dort Sida, eine einst verbotene Liebe. Lai Yuqing baut auf ihrem Kurzfilm «Love is a book» auf und erzählt von familiären Erwartungen, gesellschaftlichen Zwängen und einer Leidenschaft, die nur in Erinnerungen und auf der Bühne Ausdruck findet.", "screenings": [{"day": "09.11.", "time": "18:00", "location": "CINEMATTE"}]}, {"id": "zwätschgegrill", "title": "Zwätschgegrill, oder, Der gehörige Abstand zwischen den Badetüchern: ein schwuler Bilderbogen", "type": "langfilm", "country": "Schweiz", "year": 1984, "language": "Deutsch", "subtitles": "f", "duration_min": 50, "director": "Paul Baumann, Nik Debrunner, Bruno Egger, Marc Ph. Meystre", "presented_by": "bern.lgbt", "cn": true, "description": "Anhand des Zwätschgegrills – zentraler Ort des homosexuellen Verlustierens im Bern der 1980er-Jahre – präsentiert dieser legendäre Dokumentarfilm schamlos Sitte und Soziologie des schwulen Nacktseins. Ausgezogen und eingecremt übermannt dieser Film mit Traumbildern einer schwanzfixierten, polymorph-perversen und jugendgefährdenden Hauptstadt.", "screenings": [{"day": "07.11.", "time": "18:00", "location": "LICHTSPIEL"}]}, {"id": "animierte-kurze", "title": "Animierte Kurze", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 73, "director": "verschiedene", "cn": true, "description": "So viele grossartige Animationsfilme gab es lange nicht mehr. Ob schräger Trash oder Feel Good – hier ist für alle etwas dabei. Filme: Tuna Tartare, Whale 52, She and Her Good Vibrations, Airborne, Skin Flick, A Bird Hit My Window and Now I'm a Lesbian, Cosmonauts.", "screenings": [{"day": "08.11.", "time": "15:30", "location": "KELLERKINO"}, {"day": "10.11.", "time": "18:00", "location": "REITSCHULE"}]}, {"id": "familiengeschichten", "title": "Familiengeschichten", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 94, "director": "verschiedene", "cn": true, "description": "Die eigene Familie kann mensch sich nicht aussuchen. Zwischen Konflikten und Versöhnung erzählen diese Filme von Queers und ihren Familien. Filme: Jo's Turn, Hey Dad, Scrap Fabric, Robert and Georgie, Dressed to the Nines, Birthdays, Hi Mom, It's Me, Lou Lou.", "screenings": [{"day": "07.11.", "time": "13:00", "location": "KELLERKINO"}, {"day": "09.11.", "time": "18:00", "location": "REITSCHULE"}]}, {"id": "gay-longs", "title": "Gay–Longs", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 104, "director": "verschiedene", "cn": true, "description": "Dieses Jahr zeigen viele starke Filme unterschiedliche Facetten schwulen Lebens. Vier davon präsentieren wir euch hier. Filme: A Cappella (30'), Interval (21'), Mardochi (27'), Out of Checklist (26').", "screenings": [{"day": "06.11.", "time": "22:45", "location": "REX"}, {"day": "11.11.", "time": "20:30", "location": "REITSCHULE"}]}, {"id": "kurze-schocker", "title": "Kurze Schocker", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 113, "director": "verschiedene", "cn": true, "description": "Hier packt euch das nackte Gruseln: Zwischen schrägem Trash, Horror und Religionskritik wartet eine wilde Achterbahnfahrt auf euch. Filme: Clam Diving for Beginners, I & Me, Mad Dog, Time to Go, The Fling, Correct Me If I'm Wrong, Gender Reveal.", "screenings": [{"day": "06.11.", "time": "22:45", "location": "REITSCHULE"}]}, {"id": "porno-block", "title": "Porno-Block", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 92, "director": "verschiedene", "cn": true, "description": "Ihr liebt sie heiss, wir haben sie ausgewählt: Acht Filme über Lust, Begehren und Leidenschaft warten darauf, entdeckt zu werden. Filme: Magic Gloryhole, Ob Scena Castro, Parking Lot Prince, Love Language, Gamètes, Un Rêve pour Deux, Hijos de Hímero, Cum as You Are.", "screenings": [{"day": "07.11.", "time": "22:45", "location": "REITSCHULE"}, {"day": "08.11.", "time": "13:00", "location": "KELLERKINO"}]}, {"id": "sportliche-shorts", "title": "Sportliche Shorts", "type": "kurzfilm_block", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "e", "duration_min": 79, "director": "verschiedene", "cn": true, "description": "Handball, Skaten, Fussball, Fechten, Basketball und Wrestling: Dieser Block vereint Sportvielfalt mit ernsten Themen. Filme: Spelregler, Dickflip, Solers United, Riposte, Nora Can't Score, Lesbian Mud Wrestling.", "screenings": [{"day": "07.11.", "time": "13:00", "location": "REITSCHULE"}]}, {"id": "best-of-rosa-brille", "title": "Best-of «Rosa Brille»", "type": "kurzfilm_block", "country": "verschiedene", "year": "verschiedene", "language": "verschiedene", "subtitles": "verschiedene", "duration_min": 120, "director": "verschiedene", "cn": false, "description": "30 Jahre Queersicht: Wir zeigen Gewinnerfilme aus drei Jahrzehnten – für manche Erinnerungen, für andere echte Filmperlen. Freut euch unter anderem auf «T'es un bonhomme», «Etage X», «No Bikini» und «Falling for Caroline». In diesem Block verzichten wir auf die Angabe von Content Notes. Das Ticket gilt auch als Eintritt für die Party im Dachstock!", "screenings": [{"day": "08.11.", "time": "00:45", "location": "REITSCHULE", "note": "Ticket gilt auch als Party-Eintritt (Dachstock)"}]}, {"id": "rosa-brille-1", "title": "Rosa Brille Block 1", "type": "rosa_brille", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "d/e", "duration_min": 100, "director": "verschiedene", "cn": true, "description": "Wettbewerb um die Rosa Brille: Alan im Wunderland – Blumenkranz als Bündnis – Begehren, Zweifel, Mut – Grand Dandys Hommage – Hektik trifft Herzschmerz – erster Gang aufs Männerklo – Familienbesuch und alte Wunden – Ein Reich für Drag Kings. Filme: Sleazy Tiger, Jasmine That Blooms in Autumn, Botttlecap, Grand Dandy (for Ezra), Magid/Zafar, Wrong Bathroom, Full Month, Kingdom.", "screenings": [{"day": "06.11.", "time": "18:00", "location": "REITSCHULE"}, {"day": "07.11.", "time": "20:30", "location": "REITSCHULE"}, {"day": "09.11.", "time": "20:30", "location": "KELLERKINO"}]}, {"id": "rosa-brille-2", "title": "Rosa Brille Block 2", "type": "rosa_brille", "country": "verschiedene", "year": 2025, "language": "verschiedene", "subtitles": "d/e", "duration_min": 99, "director": "verschiedene", "cn": true, "description": "Wettbewerb um die Rosa Brille: Schmetterlinge – Judo, Vorurteile, Mut – Coming-out in Schottland – Tauchen, finden, sich begegnen – Best Friends, Reise nach Hause? – Tanz der Identitäten – trans Rebellinnen – Wissenschaft verändert Sichtweise. Filme: Fish, No Contest, Kiloran Bay, How a River is Born, Anyway I Piss Sitting Down, Mime II, Rainbow Girls, Yellow Bucket.", "screenings": [{"day": "06.11.", "time": "20:30", "location": "REITSCHULE"}, {"day": "08.11.", "time": "18:00", "location": "REITSCHULE"}, {"day": "10.11.", "time": "20:30", "location": "KELLERKINO"}]}, {"id": "rosa-brille-3", "title": "Rosa Brille Block 3", "type": "rosa_brille", "country": "verschiedene", "year": 2024, "language": "verschiedene", "subtitles": "d/e", "duration_min": 93, "director": "verschiedene", "cn": true, "description": "Wettbewerb um die Rosa Brille: Wellen, Wahrheit, Wagemut – Angst ablegen: Aufstand! – Freundschaft als Motor – Vietnamesisch in 7 Tagen – zurück zum Surfen – Paradies für zwei – Beziehungen im Rückblick – Sonntagsbraten mit Sprengkraft. Filme: Des Doigts en Or, Kisses and Bullets, Habibi et les Cracheuses, Quelqu'un de Spécial, Alice, Two Black Boys in Paradise, Marleen, Sunday Lunch.", "screenings": [{"day": "07.11.", "time": "18:00", "location": "REITSCHULE"}, {"day": "08.11.", "time": "20:30", "location": "REITSCHULE"}, {"day": "11.11.", "time": "18:00", "location": "KELLERKINO"}]}, {"id": "on-queer-aging", "title": "On Queer Aging and Endings", "type": "vorfilm", "country": "Kanada, Norwegen, Schweden", "year": 2025, "language": "Englisch", "subtitles": "—", "duration_min": 19, "director": "Christian Schulz-Quach", "cn": false, "description": "Ein Kurzfilm über queeres Älterwerden und Enden. Wird als Vorfilm vor «The Hidden Face of the Earth» am Mi 11.11. 18:00 im Kino REX gezeigt.", "screenings": [{"day": "11.11.", "time": "18:00", "location": "REX", "note": "Vorfilm vor «The Hidden Face of the Earth»"}]}, {"id": "podium-who-cares", "title": "Podium: Who cares? Who cares?", "type": "rahmen", "country": "—", "year": 2026, "language": "Deutsch", "subtitles": "—", "duration_min": 120, "director": "—", "cn": false, "description": "Seit 30 Jahren zeigen wir queere Filme. Doch was steckt hinter den Filmen, die wir schauen – unter welchen Bedingungen entstehen sie? Wer wird für welche Rolle in Betracht gezogen? Wer entscheidet? Welchen Stellenwert hat das Füreinander-Sorge-Tragen beim Inhalt, bei der Produktion und am Set? Gemeinsam mit queeren Schauspielenden, von denen einige das Manifest von #ActOut unterzeichnet haben, entwerfen wir Vorstellungen von einer Zukunft, fern von heteronormativen Strukturen. Moderation: Bernadette Kolonko. Teilnehmende: Rabea Lüthi, Lamin Leroy Gibba, Heinrich Horwitz & Godehard Giese. Gratistickets auf Eventfrog und vor Ort, Kollekte.", "screenings": [{"day": "06.11.", "time": "17:00", "location": "PROGR", "note": "Bis 19:00 – Gratistickets via Eventfrog, Kollekte"}]}, {"id": "podium-dekoloniale", "title": "Podium: Dekoloniale Perspektiven", "type": "rahmen", "country": "—", "year": 2026, "language": "Deutsch", "subtitles": "—", "duration_min": 120, "director": "—", "cn": false, "description": "Wie sind Film und Kultur mit der kolonialen Frage umgegangen – und auf welche Weise haben sie diese zugleich umgangen? Dieses Podium bringt (queere) Kulturschaffende zusammen, um gemeinsam zu diskutieren, was sich an der Schnittstelle von Film, Kolonialität und Queerness verändert hat, was fortbesteht und was zu transformieren bleibt. Ein Gespräch, geführt von jenen, die die Dinge von innen bewegen. In Zusammenarbeit mit Bern für den Film. Moderation: Mona-Lisa Kole. Gratistickets auf Eventfrog und vor Ort, Kollekte.", "screenings": [{"day": "07.11.", "time": "10:00", "location": "PROGR", "note": "Bis 12:00 – Gratistickets via Eventfrog, Kollekte"}]}, {"id": "museum-merch", "title": "Museum & Merch", "type": "rahmen", "country": "—", "year": 2026, "language": "—", "subtitles": "—", "duration_min": 0, "director": "—", "cn": false, "description": "Zum Jubiläum lädt ein kleines Museum im queerfeministischen Raum zum Stöbern ein. Entdeckt Filmplakate, Zeitungsartikel und Programmhefte aus 30 Jahren Queersicht, Portraits der OK-Mitglieder der vergangen Jahre, unseren selbst produzierten Jubiläumsfilm sowie Jubiläums-Merch inklusive Live-Siebdruckstand. Bringt dafür eure eigenen Textilien oder andere bedruckbare Lieblingsstücke mit und gestaltet sie vor Ort mit unserem Jubiläumsmotiv. Eintritt frei.", "screenings": [{"day": "07.11.", "time": "14:00", "location": "QFR", "note": "Bis 22:00 – Eintritt frei"}, {"day": "08.11.", "time": "10:00", "location": "QFR", "note": "Bis 17:00 – Eintritt frei"}]}, {"id": "speed-friending", "title": "Speed-Friending", "type": "rahmen", "country": "—", "year": 2026, "language": "Schweizerdeutsch/Hochdeutsch", "subtitles": "—", "duration_min": 180, "director": "—", "cn": false, "description": "Willst du eine Begleitung für den nächsten Film, die Queersichtparty oder möchtest neue Leute kennenlernen? Beim Speed-Friending kannst du während einer Stunde mit anderen Queers in Kontakt kommen. Vor Ort liegen Fragen zur Unterstützung bereit und die Bar ist währenddessen geöffnet. Keine Anmeldung nötig. Offen für alle Geschlechter. Eintreffen: 19:00, Start 19:30, danach Hang-out bis 22:00. Eintritt frei.", "screenings": [{"day": "07.11.", "time": "19:00", "location": "QFR", "note": "Start 19:30, Hang-out bis 22:00 – Eintritt frei"}]}, {"id": "party", "title": "30 Jahre Queersicht – Party", "type": "rahmen", "country": "—", "year": 2026, "language": "—", "subtitles": "—", "duration_min": 0, "director": "—", "cn": false, "description": "Zum grossen Festivaljubiläum laden wir euch dieses Jahr zur offiziellen Queersicht-Party in den Dachstock der Reitschule ein. Freut euch auf eine lange Nacht voller Musik, Tanz und Queer Joy – mit einem vielseitigen Line-up, das unterschiedlichste Sounds auf die Tanzfläche bringt. Als besonderes Highlight erwartet euch um Mitternacht eine Drag-Performance mit einer kleinen Überraschung. Line-up: Disco Shorley | Drag-Performance | knabber_hans | unnova & Popy Caste | 36birds. Solipreis CHF 30.–, Normalpreis CHF 25.–, reduziert CHF 20.–. Das Ticket gilt auch als Eintritt für die Best-of «Rosa Brille» Vorstellung in der Nacht.", "screenings": [{"day": "07.11.", "time": "22:00", "location": "DACHSTOCK", "note": "Begleitetes Treffen 22:00 & 23:00 ab Bahnhof: events@queersicht.ch"}]}, {"id": "brunch", "title": "Brunch (vegan, von Bromelia)", "type": "rahmen", "country": "—", "year": 2026, "language": "—", "subtitles": "—", "duration_min": 120, "director": "—", "cn": false, "description": "Dieses Jahr wird der Brunch familiär und vegan. Im queerfeministischen Raum wird das queere Kollektiv Bromelia mit seinem berühmten veganen Buffet unsere Gaumen verzaubern. Zwei Slots, Plätze via Eventfrog reservieren. Solipreis CHF 35.–, Normalpreis CHF 28.–, reduziert CHF 18.–.", "screenings": [{"day": "08.11.", "time": "10:00", "location": "QFR", "note": "Slot 1: 10:00–12:00 – Reservation via Eventfrog"}, {"day": "08.11.", "time": "12:00", "location": "QFR", "note": "Slot 2: 12:00–14:00 – Reservation via Eventfrog"}]}, {"id": "podium-queer-altern", "title": "Podium: Queer altern", "type": "rahmen", "country": "—", "year": 2026, "language": "Deutsch", "subtitles": "—", "duration_min": 120, "director": "—", "cn": false, "description": "Queer sein hört im Alter nicht auf. Doch was passiert, wenn wir auf Unterstützung und Pflege angewiesen sind? Wie sensibel sind Alters- und Pflegeinstitutionen für unterschiedliche Lebensentwürfe und Identitäten? Für queere Menschen kann ein Umzug bedeuten, sich noch einmal erklären oder neu outen zu müssen. Gemeinsam mit älteren queeren Menschen, Fachpersonen aus Pflege und Altersarbeit und Vertreter*innen von Institutionen, Wissenschaft und queeren Organisationen sprechen wir über Einsamkeit, Sichtbarkeit und die Realität queeren Alterns. In Zusammenarbeit mit queerAltern Bern. Gratistickets auf Eventfrog und vor Ort, Kollekte.", "screenings": [{"day": "08.11.", "time": "13:30", "location": "PROGR", "note": "Bis 15:30 – Gratistickets via Eventfrog, Kollekte"}]}, {"id": "rosa-brille-preisverleihung", "title": "Preisverleihung Rosa Brille", "type": "rahmen", "country": "—", "year": 2026, "language": "Deutsch", "subtitles": "—", "duration_min": 30, "director": "—", "cn": false, "description": "Die Preisverleihung der Rosa Brille findet am Mittwoch, dem 11.11. um 20:00 Uhr im Kino REX vor dem Abschlussfilm statt. Jedes Jahr küren wir die beiden Publikumslieblinge mit dem Preis der Rosa Brille. Der beliebteste Kurzfilm gewinnt 2000 Franken, der zweitplatzierte erhält 500 Franken.", "screenings": [{"day": "11.11.", "time": "20:00", "location": "REX", "note": "Vor dem Abschlussfilm"}]}]}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('app-data').textContent);
+
+const LOC_COLORS = {
+  ABC: "#ff6b6b",
+  CINEMATTE: "#ffa94d",
+  KELLERKINO: "#ffd43b",
+  REX: "#69db7c",
+  REITSCHULE: "#38d9a9",
+  LICHTSPIEL: "#4cc9f0",
+  PROGR: "#b197fc",
+  QFR: "#f783ac",
+  DACHSTOCK: "#e599f7",
+};
+
+const TYPE_LABELS = {
+  langfilm: "Langfilm",
+  kurzfilm_block: "Kurzfilm-Block",
+  rosa_brille: "Rosa Brille (Wettbewerb)",
+  vorfilm: "Vorfilm",
+  rahmen: "Rahmenprogramm",
+};
+
+// ---------- STATE ----------
+let state = {
+  view: "timeline",
+  search: "",
+  day: null,        // null = all
+  location: null,   // null = all
+  category: null,    // null = all
+  favOnly: false,
+  expanded: new Set(),
+};
+
+let favorites = new Set();
+try {
+  const stored = localStorage.getItem("qs26_favs");
+  if (stored) favorites = new Set(JSON.parse(stored));
+} catch(e) {}
+
+// ---------- HELPERS ----------
+function locName(key) {
+  const l = DATA.locations.find(l => l.key === key);
+  return l ? l.name : key;
+}
+function locColor(key) { return LOC_COLORS[key] || "#888"; }
+function dayInfo(date) {
+  return DATA.days.find(d => d.date === date);
+}
+function dayShort(date) {
+  const d = dayInfo(date);
+  return d ? d.key : "";
+}
+function dayLong(date) {
+  const d = dayInfo(date);
+  return d ? d.de : date;
+}
+function saveFavs() {
+  try { localStorage.setItem("qs26_favs", JSON.stringify([...favorites])); } catch(e) {}
+}
+function updateFavCount() {
+  document.getElementById("favCount").textContent = favorites.size;
+}
+function toggleFav(id) {
+  if (favorites.has(id)) favorites.delete(id);
+  else favorites.add(id);
+  saveFavs();
+  updateFavCount();
+  // Update card visual without re-rendering everything
+  document.querySelectorAll('.film-card[data-id="'+id+'"]').forEach(el => {
+    el.classList.toggle("faved", favorites.has(id));
+  });
+  // If we're in favOnly view, re-render to remove un-faved items
+  if (state.favOnly) render();
+}
+function toggleFavOnly() {
+  state.favOnly = !state.favOnly;
+  document.getElementById("favBtn").classList.toggle("active", state.favOnly);
+  render();
+}
+
+// ---------- FILTER UI ----------
+function buildFilters() {
+  const wrap = document.getElementById("filters");
+  let html = '';
+
+  // Day filter
+  html += '<div class="filter-group"><label class="filter-label" for="f-day">Tag</label>' +
+          '<div class="select-wrap"><select id="f-day" class="filter-select" onchange="setFilter(\'day\', this.value)">' +
+          '<option value="">Alle Tage</option>';
+  DATA.days.forEach(d => {
+    html += `<option value="${d.date}">${d.key} ${d.date} · ${d.de}</option>`;
+  });
+  html += '</select></div></div>';
+
+  // Location filter
+  html += '<div class="filter-group"><label class="filter-label" for="f-loc">Location</label>' +
+          '<div class="select-wrap"><select id="f-loc" class="filter-select" onchange="setFilter(\'location\', this.value)">' +
+          '<option value="">Alle Locations</option>';
+  DATA.locations.forEach(l => {
+    html += `<option value="${l.key}">${l.name}</option>`;
+  });
+  html += '</select></div></div>';
+
+  // Category filter
+  const cats = [["langfilm","Langfilm"],["kurzfilm_block","Kurzfilm-Block"],["rosa_brille","Rosa Brille (Wettbewerb)"],["vorfilm","Vorfilm"],["rahmen","Rahmenprogramm"]];
+  html += '<div class="filter-group"><label class="filter-label" for="f-cat">Kategorie</label>' +
+          '<div class="select-wrap"><select id="f-cat" class="filter-select" onchange="setFilter(\'category\', this.value)">' +
+          '<option value="">Alle Kategorien</option>';
+  cats.forEach(([k,v]) => {
+    html += `<option value="${k}">${v}</option>`;
+  });
+  html += '</select></div></div>';
+
+  wrap.innerHTML = html;
+}
+
+function setFilter(kind, value) {
+  if (value === null || value === "") {
+    state[kind] = null;
+  } else {
+    state[kind] = value;
+  }
+  // Update select state
+  const selectId = kind === "day" ? "f-day" : kind === "location" ? "f-loc" : "f-cat";
+  const sel = document.getElementById(selectId);
+  if (sel) {
+    sel.value = value || "";
+    sel.classList.toggle("active", !!value);
+  }
+  render();
+}
+
+function setView(v) {
+  state.view = v;
+  document.querySelectorAll(".view-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.view === v);
+  });
+  render();
+}
+
+function resetAll() {
+  state.day = null;
+  state.location = null;
+  state.category = null;
+  state.search = "";
+  state.favOnly = false;
+  document.getElementById("searchInput").value = "";
+  document.getElementById("favBtn").classList.remove("active");
+  ["f-day","f-loc","f-cat"].forEach(id => {
+    const sel = document.getElementById(id);
+    if (sel) { sel.value = ""; sel.classList.remove("active"); }
+  });
+  render();
+}
+
+// ---------- FILTER LOGIC ----------
+function matchesFilters(film, screening) {
+  // Search
+  if (state.search) {
+    const q = state.search.toLowerCase();
+    const hay = (film.title + " " + film.country + " " + film.director + " " + film.description + " " + (film.presented_by||"")).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  // Day
+  if (state.day && screening && screening.day !== state.day) return false;
+  // Location
+  if (state.location && screening && screening.location !== state.location) return false;
+  // Category
+  if (state.category && film.type !== state.category) return false;
+  // Favs
+  if (state.favOnly && !favorites.has(film.id)) return false;
+  return true;
+}
+
+// ---------- RENDER ----------
+function filmCard(film, screening, showDay) {
+  const faved = favorites.has(film.id);
+  const expanded = state.expanded.has(film.id);
+  const d = film.director && film.director !== "—" ? film.director : "";
+  const pres = film.presented_by ? ` · präsentiert von ${film.presented_by}` : "";
+  const locLine = screening
+    ? `<div class="screening-line">
+         <span class="screening-time">${screening.time}</span>
+         ${showDay ? `<span class="screening-day">${dayShort(screening.day)} ${screening.day}</span>` : ""}
+         <span class="loc-chip"><span class="loc-dot" style="background:${locColor(screening.location)}"></span>${locName(screening.location)}</span>
+         ${film.duration_min ? `<span class="meta-item dot">${film.duration_min} Min.</span>` : ""}
+       </div>`
+    : `<div class="screening-line">
+         ${film.duration_min ? `<span class="meta-item">${film.duration_min} Min.</span>` : ""}
+       </div>`;
+  const note = (screening && screening.note)
+    ? `<span class="screening-note">${screening.note}</span>` : "";
+
+  // Other screenings (in list view show all screenings)
+  let otherScreenings = "";
+  if (!screening) {
+    otherScreenings = film.screenings.map(s =>
+      `<div class="screening-line">
+         <span class="screening-time">${s.time}</span>
+         <span class="screening-day">${dayShort(s.day)} ${s.day}</span>
+         <span class="loc-chip"><span class="loc-dot" style="background:${locColor(s.location)}"></span>${locName(s.location)}</span>
+         ${s.note ? `<span class="screening-note">${s.note}</span>` : ""}
+       </div>`
+    ).join('');
+  }
+
+  const metaParts = [];
+  if (film.country && film.country !== "—") metaParts.push(`<span class="meta-item">${film.country}</span>`);
+  if (film.year && film.year !== "—") metaParts.push(`<span class="meta-item dot">${film.year}</span>`);
+  if (film.language && film.language !== "—") metaParts.push(`<span class="meta-item dot">${film.language}</span>`);
+  if (film.subtitles && film.subtitles !== "—") metaParts.push(`<span class="meta-item dot">Untertitel: ${film.subtitles}</span>`);
+
+  return `
+    <div class="film-card ${faved?'faved':''} ${expanded?'expanded':''}" data-id="${film.id}" onclick="cardClick(event,'${film.id}')">
+      <span class="type-tag ${film.type}">${TYPE_LABELS[film.type]}</span>
+      <div class="film-head">
+        <div class="film-title">${escapeHtml(film.title)}</div>
+      </div>
+      <div class="film-meta">${metaParts.join('')}</div>
+      ${locLine}
+      ${otherScreenings}
+      ${note}
+      <div class="film-desc">${escapeHtml(film.description)}</div>
+      <div class="film-extra">
+        ${d ? `<span class="meta-item">Regie: ${escapeHtml(d)}</span>` : ""}
+        ${pres ? `<span class="meta-item dot">${escapeHtml(pres.replace(' · präsentiert von ','präsentiert von: '))}</span>` : ""}
+        ${film.cn ? `<span class="cn-flag" title="Content Notes vorhanden – siehe queersicht.ch">Content Notes</span>` : ""}
+        <span class="meta-item dot" style="margin-left:auto;cursor:pointer;color:var(--accent)" onclick="event.stopPropagation();toggleFav('${film.id}')">
+          ${faved ? '★ entfernen' : '☆ merken'}
+        </span>
+      </div>
+    </div>
+  `;
+}
+
+function escapeHtml(s) {
+  if (!s) return "";
+  return String(s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
+function cardClick(e, id) {
+  // Ignore clicks on the "merken" link
+  if (e.target.closest('.meta-item[onclick]')) return;
+  if (state.expanded.has(id)) state.expanded.delete(id);
+  else state.expanded.add(id);
+  // Re-render just this card's class without full re-render (cheap)
+  const card = document.querySelector('.film-card[data-id="'+id+'"]');
+  if (card) card.classList.toggle("expanded");
+}
+
+// Build a flat list of (film, screening) pairs in timeline order
+function timelinePairs() {
+  const pairs = [];
+  DATA.films.forEach(f => {
+    f.screenings.forEach(s => {
+      if (matchesFilters(f, s)) {
+        pairs.push({film: f, screening: s, sortKey: s.day.replace(/\./g,'') + s.time.replace(':','')});
+      }
+    });
+  });
+  pairs.sort((a,b) => a.sortKey.localeCompare(b.sortKey));
+  return pairs;
+}
+
+// Films with at least one matching screening (for list view)
+function filteredFilms() {
+  return DATA.films.filter(f => {
+    if (state.favOnly && !favorites.has(f.id)) return false;
+    if (state.category && f.type !== state.category) return false;
+    if (state.search) {
+      const q = state.search.toLowerCase();
+      const hay = (f.title + " " + f.country + " " + f.director + " " + f.description + " " + (f.presented_by||"")).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    if (state.day || state.location) {
+      const hasMatch = f.screenings.some(s => {
+        if (state.day && s.day !== state.day) return false;
+        if (state.location && s.location !== state.location) return false;
+        return true;
+      });
+      if (!hasMatch) return false;
+    }
+    return true;
+  });
+}
+
+function render() {
+  const results = document.getElementById("results");
+  const banner = document.getElementById("countBanner");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const hasFilters = state.day || state.location || state.category || state.search || state.favOnly;
+
+  if (state.view === "timeline") {
+    const pairs = timelinePairs();
+    if (pairs.length === 0) {
+      results.innerHTML = emptyState();
+      banner.style.display = "none";
+      return;
+    }
+    banner.style.display = "flex";
+    document.getElementById("countText").innerHTML =
+      `<strong>${pairs.length}</strong> Vorstellung${pairs.length===1?'':'en'}${hasFilters ? ' gefunden' : ' im Programm'}`;
+    resetBtn.style.display = hasFilters ? "inline" : "none";
+
+    // Group by day
+    let html = '';
+    let curDay = null;
+    let dayCount = 0;
+    pairs.forEach(p => {
+      if (p.screening.day !== curDay) {
+        if (curDay !== null) html += '</div>'; // close day-section
+        curDay = p.screening.day;
+        dayCount = pairs.filter(x => x.screening.day === curDay).length;
+        const di = dayInfo(curDay);
+        html += `<div class="day-section">
+          <div class="day-header">
+            <span class="day-name">${di.de}</span>
+            <span class="day-date">${di.date} · ${di.fr}</span>
+            <span class="day-pill">${dayCount} ${dayCount===1?'Vorstellung':'Vorstellungen'}</span>
+          </div>`;
+      }
+      html += `<div class="time-row">
+        <div class="time-label">${p.screening.time}</div>
+        <div>${filmCard(p.film, p.screening, false)}</div>
+      </div>`;
+    });
+    if (curDay !== null) html += '</div>';
+    results.innerHTML = html;
+  } else {
+    // List view (films sorted alphabetically)
+    const films = filteredFilms().sort((a,b) => a.title.localeCompare(b.title, 'de'));
+    if (films.length === 0) {
+      results.innerHTML = emptyState();
+      banner.style.display = "none";
+      return;
+    }
+    banner.style.display = "flex";
+    let screeningsCount = films.reduce((s,f) => s + f.screenings.filter(sc => {
+      if (state.day && sc.day !== state.day) return false;
+      if (state.location && sc.location !== state.location) return false;
+      return true;
+    }).length, 0);
+    document.getElementById("countText").innerHTML =
+      `<strong>${films.length}</strong> ${films.length===1?'Titel':'Titel'} · <strong>${screeningsCount}</strong> Vorstellung${screeningsCount===1?'':'en'}`;
+    resetBtn.style.display = hasFilters ? "inline" : "none";
+
+    let html = '<div class="film-list">';
+    films.forEach(f => {
+      html += filmCard(f, null, true);
+    });
+    html += '</div>';
+    results.innerHTML = html;
+  }
+}
+
+function emptyState() {
+  const hasFilters = state.day || state.location || state.category || state.search || state.favOnly;
+  if (state.favOnly && !hasFilters) {
+    return `<div class="empty">
+      <div class="empty-icon">★</div>
+      <div class="empty-title">Noch nichts gemerkt</div>
+      <div class="empty-text">Tippe auf «☆ merken» bei Filmen, die du dir ansehen willst. Sie erscheinen dann hier.</div>
+    </div>`;
+  }
+  return `<div class="empty">
+    <div class="empty-icon">🔍</div>
+    <div class="empty-title">Nichts gefunden</div>
+    <div class="empty-text">Versuche andere Filter oder setze alle zurück.</div>
+  </div>`;
+}
+
+// ---------- SEARCH ----------
+let searchTimeout;
+document.getElementById("searchInput").addEventListener("input", e => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    state.search = e.target.value.trim();
+    render();
+  }, 120);
+});
+
+// ---------- INIT ----------
+buildFilters();
+updateFavCount();
+updateStickyTop();
+render();
+window.addEventListener("resize", updateStickyTop);
+
+function updateStickyTop() {
+  // Make day-header stick right below the header (which contains filters + view-toggle)
+  const header = document.querySelector("header");
+  const viewToggle = document.querySelector(".view-toggle");
+  let top = 0;
+  if (header) top += header.offsetHeight;
+  if (viewToggle) top += viewToggle.offsetHeight;
+  document.documentElement.style.setProperty("--day-header-top", top + "px");
+}
+
+// Make functions globally accessible for inline onclick handlers
+window.setFilter = setFilter;
+window.setView = setView;
+window.toggleFav = toggleFav;
+window.toggleFavOnly = toggleFavOnly;
+window.cardClick = cardClick;
+window.resetAll = resetAll;
+</script>
+</body>
+</html>
