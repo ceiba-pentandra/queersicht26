@@ -3,43 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d0d12">
+<meta name="theme-color" content="#0a2826">
 <meta name="description" content="Queersicht 2026 – LGBTIAQ+ Filmfestival Bern, 5.–11.11.2026. Programmübersicht mit Filtern nach Tag, Location, Kategorie.">
 <title>Queersicht 2026 · Programm</title>
 <style>
   :root {
-    --bg: #0d0d12;
-    --bg-elev: #16161e;
-    --bg-card: #1d1d28;
-    --bg-card-hover: #252532;
-    --text: #f4f1ea;
-    --text-dim: #b8b3a8;
-    --text-faint: #6b685f;
-    --accent: #ff4d8d;        /* hot pink */
-    --accent-2: #ffd23f;      /* yellow */
-    --accent-3: #4cc9f0;      /* cyan */
-    --accent-4: #9bf6a3;      /* mint */
-    --accent-5: #b388ff;      /* purple */
-    --accent-6: #ff8a3d;     /* orange */
-    --border: #2a2a36;
-    --border-strong: #3a3a4a;
-    --shadow: 0 4px 16px rgba(0,0,0,0.4);
+    /* Booklet-inspired palette: deep teal background, sand-gold accent, silver text */
+    --bg: #0a2826;            /* deep teal (booklet cover bottom) */
+    --bg-elev: #0f3331;      /* slightly lighter teal */
+    --bg-card: #143a38;       /* card surface */
+    --bg-card-hover: #1b4845;
+    --text: #ebe6dd;          /* warm silver (3D letter highlights) */
+    --text-dim: #a8a499;      /* sand-beige */
+    --text-faint: #6e7872;    /* muted teal-gray */
+    --accent: #c9a55c;        /* warm gold/sand (booklet beige highlights) */
+    --accent-2: #7ed4bc;      /* mint teal */
+    --accent-3: #4cc9f0;      /* rainbow: cyan */
+    --accent-4: #9bf6a3;      /* rainbow: mint */
+    --accent-5: #b388ff;      /* rainbow: purple */
+    --accent-6: #ff8a3d;     /* rainbow: orange */
+    --accent-pink: #ff4d8d;  /* rainbow: pink (kept for langfilm type tag) */
+    --accent-yellow: #ffd23f;/* rainbow: yellow (kept for rosa_brille tag) */
+    --border: #1f4a48;
+    --border-strong: #2e5c5a;
+    --shadow: 0 4px 16px rgba(0,0,0,0.45);
     --radius: 14px;
     --radius-sm: 8px;
     --max-w: 1100px;
   }
   @media (prefers-color-scheme: light) {
     :root {
-      --bg: #fbf7f0;
-      --bg-elev: #ffffff;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f4f0e8;
-      --text: #1a1a22;
-      --text-dim: #4d4a44;
-      --text-faint: #8a867d;
-      --border: #e5e0d6;
-      --border-strong: #d0c9bc;
-      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+      /* Light mode = beige/sand cover top */
+      --bg: #e8e1d3;          /* warm beige (booklet cover top) */
+      --bg-elev: #f3eee2;
+      --bg-card: #fbf7ed;      /* cream */
+      --bg-card-hover: #ede5d2;
+      --text: #1a3a37;         /* deep teal text */
+      --text-dim: #5a554c;     /* warm brown */
+      --text-faint: #968d7c;
+      --accent: #1e3e3d;       /* deep teal as accent */
+      --accent-2: #8c6d3c;     /* warm gold-brown */
+      --border: #d4ccba;
+      --border-strong: #b8ad95;
+      --shadow: 0 2px 10px rgba(30,62,61,0.10);
     }
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -61,14 +67,14 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(13,13,18,0.92);
+    background: rgba(10,40,38,0.92);
     backdrop-filter: saturate(180%) blur(12px);
     -webkit-backdrop-filter: saturate(180%) blur(12px);
     border-bottom: 1px solid var(--border);
     padding-top: env(safe-area-inset-top);
   }
   @media (prefers-color-scheme: light) {
-    header { background: rgba(251,247,240,0.92); }
+    header { background: rgba(232,225,211,0.92); }
   }
   .header-inner {
     max-width: var(--max-w);
@@ -92,11 +98,28 @@
   .logo-mark {
     width: 32px; height: 32px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg,
-      #ff4d8d 0deg, #ffd23f 60deg, #9bf6a3 120deg,
-      #4cc9f0 180deg, #b388ff 240deg, #ff8a3d 300deg, #ff4d8d 360deg);
-    box-shadow: 0 0 0 2px var(--bg-elev), 0 0 12px rgba(255,77,141,0.4);
+    /* Booklet-inspired: deep teal base with subtle rainbow ring (the Queersicht logo uses rainbow) */
+    background:
+      radial-gradient(circle at 30% 30%, #7ed4bc 0%, #1e3e3d 60%, #042423 100%);
+    box-shadow:
+      0 0 0 2px var(--bg-elev),
+      0 0 0 3px rgba(201,165,92,0.55),
+      0 0 12px rgba(201,165,92,0.35);
     flex-shrink: 0;
+    position: relative;
+  }
+  .logo-mark::after {
+    content: "30";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9a55c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
   }
   .logo-text { line-height: 1.1; }
   .logo-text small {
@@ -424,8 +447,8 @@
   .screening-day { color: var(--text-dim); font-size: 11px; }
   .screening-note {
     font-size: 11px;
-    color: var(--accent-2);
-    background: rgba(255,210,63,0.12);
+    color: var(--accent);
+    background: rgba(201,165,92,0.14);
     padding: 2px 7px;
     border-radius: 5px;
     margin-top: 4px;
@@ -441,9 +464,9 @@
     border-radius: 4px;
     margin-bottom: 6px;
   }
-  .type-tag.langfilm { background: rgba(255,77,141,0.15); color: var(--accent); }
-  .type-tag.kurzfilm_block { background: rgba(76,201,240,0.15); color: var(--accent-3); }
-  .type-tag.rosa_brille { background: rgba(255,210,63,0.18); color: var(--accent-2); }
+  .type-tag.langfilm { background: rgba(201,165,92,0.18); color: var(--accent); }
+  .type-tag.kurzfilm_block { background: rgba(126,212,188,0.16); color: var(--accent-2); }
+  .type-tag.rosa_brille { background: rgba(255,210,63,0.18); color: var(--accent-yellow); }
   .type-tag.vorfilm { background: rgba(155,246,163,0.18); color: var(--accent-4); }
   .type-tag.rahmen { background: rgba(179,136,255,0.18); color: var(--accent-5); }
   .film-desc {
